@@ -1,5 +1,4 @@
-A real-time cost monitoring solution for AWS. Instaces and prices get monitored in real-time, enabling more detailed 
-
+A real-time cost monitoring solution for AWS. Instaces and prices get monitored in real-time, enabling more detailed understanding of your stack and total cost of ownership.
 Some of the features that this application provides are spot instance price tracking, normalizing by hour and calculating costs.
 
 To get started
