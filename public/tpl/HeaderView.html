@@ -1,0 +1,128 @@
+<div id="dashboard-navbar" class="header" style="">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="z-index: 10;">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <!--
+                <a class="brand" href="#"><font color="white">stack</font><font color="red">ignite</font></a>
+                -->
+                <a class="brand" href="#dashboard">Dashboard</a>
+
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="add-menu"><a href="#dashboard/stack/lookinglass">Client View</a></li>
+                    </ul>
+
+                    <!--
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#dashboard-stack" class="dropdown-toggle" data-toggle="dropdown">Stack <b class="caret"></b></a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#dashboard/stack/lookinglass">Filtered</a></li>
+                                <li class="nav-header">CloudFormation</li>
+                                <li><a href="#cloudformation/manage">Manage</a></li>
+                                <li><a href="#cloudformation/add">Design</a></li>
+                                <li class="nav-header">Users</li>
+                                <li><a href="#users">Manage</a></li>
+                                <li><a href="#users/add">Add</a></li>
+                                <li class="nav-header">Security Groups</li>
+                                <li><a href="#security">Manage</a></li>
+                                <li><a href="#security/add">Design</a></li>
+                                <li class="nav-header">Cluster</li>
+                                <li><a href="#cluster/asg">Auto-Scaling Groups</a></li>
+                                <li><a href="#cluster/lc">Launch Configurations</a></li>
+                                <li><a href="#cluster/sp">Scaling Policies</a></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                    -->
+                    
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#dashboard-ec2" class="dropdown-toggle" data-toggle="dropdown">EC2 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Instances</li>
+                                <li><a href="#dashboard/ec2/instances">Active</a></li>
+                                <li><a href="#dashboard/ec2/instances/historic">All Historic</a></li>
+                                <li class="nav-header">Price Table</li>
+                                <li><a href="#dashboard/ec2/types/all">All</a></li>
+                                <li><a href="#dashboard/ec2/types/reserved">Reserved</a></li>
+                                <li><a href="#dashboard/ec2/types/ondemand">Ondemand</a></li>
+                                <li><a href="#dashboard/ec2/types/spot">Spot</a></li>
+                                <li class="nav-header">Costs</li>
+                                <li><a href="#dashboard/ec2/prices/hourly">Last 72 hours</a></li>
+                                <li><a href="#dashboard/ec2/prices/monthly">Last 30 days</a></li>
+                                <li><a href="#dashboard/ec2/prices/alltime">All time</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#dashboard-ebs" class="dropdown-toggle" data-toggle="dropdown">EBS <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#dashboard/ebs/volumes">Volumes</a></li>
+                                <li><a href="#dashboard/ebs/snapshots">Snapshots</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav">
+                        <li class="add-menu"><a href="#ami">AMI</a></li>
+                    </ul>
+
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#dashboard-rds" class="dropdown-toggle" data-toggle="dropdown">RDS <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Instances</li>
+                                <li><a href="#dashboard/rds/instances">Active</a></li>
+                                <li><a href="#dashboard/rds/instances/historic">All Historic</a></li>
+                                <li class="nav-header">Price Table</li>
+                                <li><a href="#dashboard/rds/types/reserved">Reserved</a></li>
+                                <li><a href="#dashboard/rds/types/ondemand">Ondemand</a></li>
+                                <li class="nav-header">Costs</li>
+                                <li><a href="#dashboard/rds/prices/hourly">Last 72 hours</a></li>
+                                <li><a href="#dashboard/rds/prices/monthly">Last 30 days</a></li>
+                                <li><a href="#dashboard/rds/prices/alltime">All time</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!--
+                    <ul class="nav">
+                        <li class="add-menu"><a href="#dashboard/elb">ELB</a></li>
+                        <li class="add-menu"><a href="#sdb">SDB</a></li>
+                        <li class="add-menu"><a href="#sns">SNS</a></li>
+                        <li class="add-menu"><a href="#sqs">SQS</a></li>
+                    </ul>
+                    -->
+
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a href="#dashboard-cost" class="dropdown-toggle" data-toggle="dropdown">Cost <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Spot Pricing</li>                            
+                                <li><a href="#dashboard/cost/spot/current">Current Prices</a></li>
+                                <li><a href="#dashboard/cost/spot/historic">Historic Prices</a></li>
+                                <li><a href="#dashboard/cost/spot/savings">Historic Savings</a></li>
+                                <li><a href="#dashboard/cost/spot/projections">Projections</a></li>
+                                <li><a href="#dashboard/cost/spot/recommendations">Recommendations</a></li>
+                            </ul>
+                        </li>
+                        <!--<li class="add-menu"><a href="#alarms">CloudWatch Alarms</a></li>-->
+                        <li class="add-menu"><a href="#dashboard/activity">Activity</a></li>
+                        <li class="about-menu"><a href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+</div>

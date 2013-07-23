@@ -1,0 +1,128 @@
+<div class="row-fluid marketing" style="margin-top: 60px" id="dashboard-stats">
+  
+
+  <div class="row-fluid">
+    <div class="span9" id="dashboard_stats">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon"><i class="icon-signal"></i></span>
+          <span class="icon">Service Provisioning Cost History</span> <div class="buttons"><span class="btn btn-mini">Last updated <span id="ts_ls"></span></span></div>
+        </div>
+        <div class="widget-content" style="text-align: center; display:none; min-height: 142px;">
+          <ul class="stat-boxes ec2">
+            <li id="ec2_prov_small_graph">
+              <div class="left">
+                <span class="bar_graph" id="ec2_cost_small_line_graph"></span>
+              </div>
+              <div class="right">
+                <strong id="ec2"></strong>
+                EC2 Counts
+              </div>
+            </li>
+            <li id="ec2_cost_small_graph">
+              <div class="left">
+                <span class="line_graph" id="ec2_cost_small_line_graph"></span>
+              </div>
+              <div class="right">
+                <strong id="ec2_cost">$0</strong>
+                EC2 Day $
+              </div>
+            </li>
+          </ul>
+          
+          <ul class="stat-boxes rds">
+            <li id="rds_prov_small_graph">
+              <div class="left">
+                <span class="bar_graph" id="ec2_cost_small_line_graph"></span>
+              </div>
+              <div class="right">
+                <strong id="rds"></strong>
+                RDS Counts
+              </div>
+            </li>
+            <li id="rds_cost_small_graph" >
+              <div class="left">
+                <span class="line_graph" id="ec2_cost_small_line_graph"></span>
+              </div>
+              <div class="right">
+                <strong id="rds_cost">$0</strong>
+                RDS Day $
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="span3" id="dashboard_cost">
+      <div class="widget-box collapsible" id="dashboard_cost">
+        <div class="widget-title">
+          <span class="icon"><i class="icon-list"></i></span>
+          <span class="icon">Current Costs & Projections</span>
+        </div>
+        <div class="widget-content" style="display:none; min-height: 142px; padding: 0px 10px 0px 10px;">
+          <br>
+          <table class="table" style="font-size: 14px;">
+            <thead>
+              <tr>
+                <th style="width: 10%">Period</th>
+                <th style="width: 30%; text-align: right;">Cost</th>
+                <th style="width: 30%; text-align: right;">Projected</th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Day</td>
+              <td id="cost_day" style="text-align: right;"></td>
+              <td id="cost_dayp" style="text-align: right;"></td>
+            </tr>
+            <tr>
+              <td>Month</td>
+              <td id="cost_month" style="text-align: right;"></td>
+              <td id="cost_monthp" style="text-align: right;"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="row-fluid">
+    <div class="span7" id="dashboard_stats">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon"><i class="icon-calendar"></i></span>
+          <span class="icon">Daily Cost Breakdown</span>
+        </div>
+        <div class="widget-content" style="text-align: center; display:none">
+          <div id="graph_daily_cost" style="min-width: 400px; height: 366px; padding: 20px">
+              <svg></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="span5" id="dashboard_timeline">
+      <div class="widget-box collapsible">
+        <div class="widget-title">
+          <span class="icon"><i class="icon-list-alt"></i></span>
+          <span class="icon">Activity Timeline</span> 
+          <div class="buttons">
+            <span class="btn btn-mini">Showing latest <span id="actions_count"></span> actions</span>
+            <a href="#dashboard/activity" class="btn btn-mini">View All</a>
+          </div>
+        </div>
+        <div class="widget-content nopadding updates" style="display:none">
+          <div class="" id="activity-timeline"></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+<div class="row-fluid marketing"></div>

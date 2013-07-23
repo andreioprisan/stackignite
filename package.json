@@ -1,0 +1,37 @@
+{
+    "name": "stackignite",
+    "preferGlobal": false,
+    "description": "a complete AWS management solution",
+    "version": "0.7.0",
+    "author": "Andrei Oprisan <andrei@oprisan.com>",
+    "contributors": [
+        {
+            "name": "Andrei Oprisan",
+            "email": "andrei@oprisan.com"
+        }
+    ],
+    "dependencies": {
+        "express": "latest",
+        "mongodb": "latest",
+        "socket.io": "0.9.10",
+        "request": "2.12.0",
+        "xmlbuilder": "0.4.2",
+        "xml2js": "0.2.3",
+        "libxmljs": "0.6.1",
+        "moment": "1.7.2",
+        "awssum": "0.12.2",
+        "synapse": "latest",
+        "async": "0.2.x",
+        "fmt": "0.4.x",
+        "lodash": ">= 1.0.0-rc.3",
+        "nodetime": "latest"
+    },
+    "engines": {
+        "node": "0.8.19",
+        "npm": "1.1.49"
+    },
+    "subdomain": ".",
+    "scripts": {
+        "start": "server.js"
+    }
+}

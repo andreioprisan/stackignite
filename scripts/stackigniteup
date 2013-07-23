@@ -1,0 +1,14 @@
+#!/bin/sh
+
+( cd /server/web/stack*; forever stopall; git pull; 
+     forever start server.js 3001;
+     forever start server.js 3002;
+     forever start server.js 3003;
+     forever start server.js 3004;
+     forever start server.js 3005;
+     forever start server.js 3006;
+     forever start server.js 3007;
+     forever start server.js 3008;
+
+ )
+

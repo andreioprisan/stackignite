@@ -1,0 +1,174 @@
+<td>
+	<%= identifying.func %>
+</td>
+<td>
+	<%= instancesSet.item.keyName %>
+</td>
+<td>
+	<%= instancesSet.item.instanceId %>
+</td>
+<td>
+	<%= identifying.name %>
+</td>
+<td>
+	<%= instancesSet.item.placement.availabilityZone %>
+</td>
+<td>
+	<%= instancesSet.item.instanceType %>
+</td>
+<td>
+	<%if (instancesSet.item.instanceLifecycle &&
+		  instancesSet.item.instanceLifecycle == "spot") {%>
+	spot
+	<%} else {%>
+	on demand
+	<%}%>
+</td>
+<td>
+	<%= instancesSet.item.architecture %>
+</td>
+<td>
+	<%= instancesSet.item.instanceState.name %>
+</td>
+<td>
+	<%= instancesSet.item.launchTime %>
+</td>
+<td>
+	<a href="#ec2-instance-details-<%= instancesSet.item.instanceId %>" role="button" class="btn" data-toggle="modal">view</a>
+
+	<div id="ec2-instance-details-<%= instancesSet.item.instanceId %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  style="width: 90%; left: 22%;">
+		<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">
+			Instance ID <%= instancesSet.item.instanceId %> 
+			Running State <%= instancesSet.item.instanceState.name %> 
+			code: <%= instancesSet.item.instanceState.code %> 
+			Monitoring State <%= instancesSet.item.monitoring.state %> </h3>
+		</div>
+		<div class="modal-body">
+		<p>
+			<h4>Client Details</h4>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Client</th>
+						<th>Project</th>
+						<th>Environment</th>
+						<th>Function</th>
+					</tr>
+				</thead>
+				<tr>
+					<td><%= identifying.client %></td>
+					<td><%= identifying.project %></td>
+					<td><%= identifying.env %></td>
+					<td><%= identifying.func %></td>
+				</tr>
+			</table>
+			<br/>
+
+			<h4>Reservation Details</h4>			
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Reservation ID</th>
+						<th>Owner ID</th>
+						<th>Instance ID</th>
+						<th>AMI Image ID</th>
+						<th>Kernel ID</th>
+						<th>Ramdisk ID</th>
+						<th>Started At</th>
+						<th>Instance Type</th>
+						<th>Availability Zone</th>
+						<th>Architecture</th>
+					</tr>
+				</thead>
+				<tr>
+					<td><%= reservationId %></td>
+					<td><%= ownerId %></td>
+					<td><%= instancesSet.item.instanceId %></td>
+					<td><%= instancesSet.item.imageId %></td>
+					<td><%= instancesSet.item.kernelId %></td>
+					<td><%= instancesSet.item.ramdiskId %></td>
+					<td><%= instancesSet.item.launchTime %></td>
+					<td><%= instancesSet.item.instanceType %></td>
+					<td><%= instancesSet.item.placement.availabilityZone %></td>
+					<td><%= instancesSet.item.architecture %></td>
+				</tr>
+			</table>
+			<br/>
+
+			<h4>DNS</h4>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Private Hostname</th>
+						<th>Private IP Address</th>
+						<th>Public Hostname</th>
+						<th>Public IP Address</th>
+					</tr>
+				</thead>
+				<tr>
+					<td><%= instancesSet.item.privateDnsName %></td>
+					<td><%= instancesSet.item.privateIpAddress %></td>
+					<td><%= instancesSet.item.dnsName %></td>
+					<td><%= instancesSet.item.ipAddress %></td>
+				</tr>
+			</table>
+			<br/>
+
+			<h4>Block Storage</h4>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>EBS Optimized?</th>
+						<th>Root Device Type</th>
+						<th>Root Location</th>
+						<%if (_.size(instancesSet.item.blockDeviceMapping) != 0 &&
+								instancesSet.item.blockDeviceMapping.item != null &&
+								instancesSet.item.blockDeviceMapping.item.ebs != null
+							  ) {%>						
+						<th>EBS Volume ID</th>
+						<th>Status</th>
+						<th>Attach Time</th>
+						<th>Delete On Termination?</th>
+						<%}%>						
+					</tr>
+				</thead>
+				<tr>
+					<td><%= instancesSet.item.ebsOptimized %></td>
+					<td><%= instancesSet.item.rootDeviceType %></td>
+					<td><%= instancesSet.item.rootDeviceName %></td>
+
+					<%if (_.size(instancesSet.item.blockDeviceMapping) != 0 &&
+							instancesSet.item.blockDeviceMapping.item != null &&
+							instancesSet.item.blockDeviceMapping.item.ebs != null
+						  ) {%>
+
+					<td><%if (_.has(instancesSet.item.blockDeviceMapping.item.ebs, 'volumeId')) {%>
+						<%= instancesSet.item.blockDeviceMapping.item.ebs.volumeId %>
+						<%}%>
+					</td>
+					<td><%if (_.has(instancesSet.item.blockDeviceMapping.item.ebs, 'status')) {%>
+						<%= instancesSet.item.blockDeviceMapping.item.ebs.status %>
+						<%}%>
+					</td>
+					<td><%if (_.has(instancesSet.item.blockDeviceMapping.item.ebs, 'attachTime')) {%>
+						<%= instancesSet.item.blockDeviceMapping.item.ebs.attachTime %>
+						<%}%>
+					</td>
+					<td><%if (_.has(instancesSet.item.blockDeviceMapping.item.ebs, 'deleteOnTermination')) {%>
+						<%= instancesSet.item.blockDeviceMapping.item.ebs.deleteOnTermination %>
+						<%}%>
+					</td>
+					<%}%>
+				</tr>
+			</table>
+			<br/>
+
+			<h4>Raw Data</h4>
+			<pre class="prettyprint"><%= JSON.stringify(instancesSet) %></pre>
+		</p>
+		</div>
+	</div>
+</td>
+
